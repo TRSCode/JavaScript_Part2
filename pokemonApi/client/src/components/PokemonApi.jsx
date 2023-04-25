@@ -4,7 +4,8 @@ const PokemonApi = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    // adding ?limit=807 gets all pokemon's... shown in documentation "Resource Lists"
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
       .then(response => response.json())
       .then(response => setPokemon(response.results))
   }, []);
