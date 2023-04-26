@@ -1,19 +1,27 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
 const PokemonApi = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
     // adding ?limit=807 gets all pokemon's... shown in documentation "Resource Lists"
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
-      .then(response => response.json())
-      .then(response => setPokemon(response.results))
+    axios.get("https://pokeapi.co/api/v2/pokemon/?limit=807")
+      .then(res => {
+        console.log(res.data.results);
+        setPokemon(res.data.results)
+      })
+      .catch(err => console.log(err))
   }, []);
   
   return (
     <div>
-      {pokemon.length > 0 && pokemon.map((poke, index) =>{
-        return (<div key={index}>{poke.name}</div>)
+      <h1>Pokemon List</h1>
+      {pokemon.map((poke, index) =>{
+        return (
+        <div key={index}>
+          <p>{poke.name}</p>
+        </div>)
       }
       )}
     </div>
