@@ -8,7 +8,7 @@ const PokemonApi = () => {
     // adding ?limit=807 gets all pokemon's... shown in documentation "Resource Lists"
     axios.get("https://pokeapi.co/api/v2/pokemon/?limit=807")
       .then(res => {
-        console.log(res.data.results);
+        // console.log(res.data.results);
         setPokemon(res.data.results)
       })
       .catch(err => console.log(err))
