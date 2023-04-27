@@ -6,6 +6,16 @@ const AdtlRoutes = (props) => {
     const {num, color, backgrd} = useParams();
     return (
         <div>
+            {/* to check if a number */}
+            {/* {
+                isNaN(num)?
+                <h1>This is a word: {num}</h1>
+                :
+                <h1>This is a number: {num}</h1>
+            } */}
+
+            {/* to add style with an additional ternary */}
+            <div>
             {
                 isNaN(num)?
                 <h1 style ={
@@ -17,6 +27,9 @@ const AdtlRoutes = (props) => {
                 <h1>This is a number: {num}</h1>
             }
 
+            </div>
+
+
         </div>
 
 
@@ -24,3 +37,5 @@ const AdtlRoutes = (props) => {
 }
 
 export default AdtlRoutes
+
+
