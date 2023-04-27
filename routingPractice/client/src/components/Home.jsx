@@ -2,7 +2,7 @@ const Home = (props) => {
     return (
         <div>
             <h1 style={{ color: "red" }}>
-                Welcome
+                Welcome !
             </h1>
         </div>
     )

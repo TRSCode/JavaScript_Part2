@@ -9,7 +9,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <h3>Instructions</h3>
     <p>Add to the url "/home" to get to the home page</p>
+    <p>Add a number to url "/5" to get to the number page</p>
+    <p>Add a word to url "/hello" to get the word page</p>
+    <p>Add a color to url "/hello/yellow/black to change text and background</p>
       <App />
     </BrowserRouter>
   </React.StrictMode>
