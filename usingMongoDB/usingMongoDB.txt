@@ -1,0 +1,59 @@
+Create a database called 'my_first_db'.
+use my_first_db
+
+Create students collection.
+db.createCollection('students')
+
+Each document you insert into this collection should have the following format: ({name: STRING, home_state: STRING, lucky_number: NUMBER, birthday: {month: NUMBER, day: NUMBER, year: NUMBER}})
+
+
+Create 5 students with the appropriate info.
+db.students.insert({name:"Chuck Norris", home_state: "California", lucky_number: 1, birthday: {month:03,day:10,year:1940}})
+
+db.students.insert({name:"Jet li", home_state: "Oklahoma", lucky_number: 13, birthday: {month:04,day:26,year:1963}})
+
+db.students.insert({name:"Chris Tucker", home_state: "Georgia", lucky_number: 7, birthday: {month:08,day:31,year:1971}})
+
+db.students.insert({name:"Beyonce Knowles-Carter", home_state: "Texas", lucky_number: 5, birthday: {month:09,day:4,year:1981}})
+
+db.students.insert({name:"Alexander Rodriguez", home_state: "New York", lucky_number: 2, birthday: {month:07,day:27,year:1975}})
+
+
+Get all students.
+db.students.find().pretty()
+
+Retrieve all students who are from California (San Jose Dojo) or Washington (Seattle Dojo).
+db.students.find({ home_state: { $in: [ "California", "Washington" ] } })
+
+Get all students whose lucky number is greater than 3
+db.students.find({lucky_number:{$gt:3}}).pretty()
+
+Get all students whose lucky number is less than or equal to 10
+db.students.find({lucky_number:{$lte:10}}).pretty()
+
+Get all students whose lucky number is between 1 and 9 (inclusive)
+
+
+Add a field named 'interests' to all student documents in the collection. The field should be an array and contain the following entries: 'coding', 'brunch', MongoDB'. Add this field to all documents using a single command.
+
+Add some unique interests for each particular student into each of their interest arrays.
+
+Add the interest 'taxes' into someone's interest array.
+
+Remove the 'taxes' interest you just added.
+
+Remove all students who are from California.
+
+Remove a student by name.
+
+Remove a student whose lucky number is greater than 5 (JUST ONE)
+
+Add a field to each student document called 'number_of_belts' and set it to 0.
+
+Increment this field by 1 for all students in Washington (Seattle Dojo).
+
+Rename the 'number_of_belts' field to 'belts_earned'
+
+Remove the 'lucky_number' field.
+
+Add a 'updated_on' field, and set the value as the current date.
