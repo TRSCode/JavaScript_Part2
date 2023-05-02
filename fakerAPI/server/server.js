@@ -7,7 +7,7 @@ const createUser = () => {
     const newUser = {
         password: faker.internet.password(),
         email: faker.internet.email(),
-        phoneNumber: faker.phone.phoneNumber(), 
+        phoneNumber: faker.phone.number(), 
         lastName: faker.name.lastName(),
         firstName: faker.name.firstName(),
         _id: faker.datatype.uuid()
@@ -30,6 +30,7 @@ const createCompany = () => ({
 
 app.get("/api/users/new", (req, res) => {
     const newUser = createUser();
+    console.log(newUser);
     res.json(newUser);
 });
 
