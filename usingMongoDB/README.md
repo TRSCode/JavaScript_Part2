@@ -1,4 +1,4 @@
 # Using MongoDB Assignment
 ## Database
 
-Using mongoDB shell, Follow multiple steps
+Using mongoDB shell, Follow multiple CRUD steps
