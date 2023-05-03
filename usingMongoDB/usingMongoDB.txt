@@ -36,25 +36,42 @@ db.students.find({ lucky_number: {$gte:1}, lucky_number: { $lte: 9 } }).pretty()
 
 
 9-Add a field named 'interests' to all student documents in the collection. The field should be an array and contain the following entries: 'coding', 'brunch', MongoDB'. Add this field to all documents using a single command.
+db.students.updateMany({}, {$set: {interest: ['coding', 'brunch', 'MongoDB']}})
 
 10-Add some unique interests for each particular student into each of their interest arrays.
+db.students.update({"name": "Chuck Norris"}, {$push: {interest: "film production"}})
+db.students.update({"name": "Jet li"}, {$push: {interest: "train animal support dogs"}})
+db.students.update({"name": "Beyonce Knowles-Carter"}, {$push: {interest: "travel"}})
+db.students.update({"name": "Chris Tucker"}, {$push: {interest: "comedy"}})
+db.students.update({"name": "Alexander Rodriguez"}, {$push: {interest: "coaching High School baseball"}})
+
 
 11-Add the interest 'taxes' into someone's interest array.
+db.students.update({"name": "Chris Tucker"}, {$push: {interest: "taxes"}})
 
 12-Remove the 'taxes' interest you just added.
+db.students.update({"name": "Chris Tucker"}, {$pull: {interest: "taxes"}})
 
 13-Remove all students who are from California.
+db.students.remove({"home_state": "California"})
 
 14-Remove a student by name.
+db.students.remove({"name": "Alexander Rodriguez"})
 
 15-Remove a student whose lucky number is greater than 5 (JUST ONE)
+db.students.deleteOne({"lucky_number": {$gt: 5}})
 
 16-Add a field to each student document called 'number_of_belts' and set it to 0.
+db.students.updateMany({}, {$set: {number_of_belts: 0}})
 
 17-Increment this field by 1 for all students in Washington (Seattle Dojo).
+db.students.updateMany({"home_state": "Washington"},{$inc: {"number_of_belts": 1}})
 
 18-Rename the 'number_of_belts' field to 'belts_earned'
+db.students.updateMany({},{$rename: {"number_of_belts": "belts_earned"}})
 
 19-Remove the 'lucky_number' field.
+db.students.updateMany({},{$unset: {"lucky_number": ""}})
 
 20-Add a 'updated_on' field, and set the value as the current date.
+db.students.updateMany({},{$currentDate: {"updated_on": true}})
