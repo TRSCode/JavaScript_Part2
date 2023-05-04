@@ -32,6 +32,8 @@ app.get("/api/users/new", (req, res) => {
     const newUser = createUser();
     console.log(newUser);
     res.json(newUser);
+    // or (replaces const newUser = createUser() and res.json(newUser))
+    // res.json(createUser())
 });
 
 app.get("/api/companies/new", (req, res) => {
@@ -47,6 +49,8 @@ app.get("/api/user/company", (req, res) => {
         company: newCompany,
     }
     res.json(combinedObject);
+    // or (without the last 7 lines)
+    // res.json({user: createUser, company: createCompany()})
 });
 
 app.listen( port, () => console.log(`Listening on port: ${port}`));
