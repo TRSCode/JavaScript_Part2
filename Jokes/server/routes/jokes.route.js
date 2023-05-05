@@ -9,5 +9,5 @@ module.exports = app => {
     // this will only change the values changed
     app.patch('/api/jokes/:id', JokeController.updateJoke);
     app.delete('/api/jokes/:id', JokeController.deleteJoke);
-    app.get('/api/jokes/random', JokeController.getRandomJoke);
+    app.get('/api/jokes/oneJoke/random', JokeController.getRandomJoke);
 }

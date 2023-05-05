@@ -18,16 +18,29 @@ module.exports = {
     // READ ONE
     getOneJoke: (req, res) => {
         // console.log(req)
-        Joke.findById(req.params._id)
+        Joke.findById(req.params.id)
             .then(oneJoke => res.json(oneJoke))
             .catch(err => res.json(err));
     },
-    // READ RANDOM  ***Doesn't Work Yet*** 
-    getRandomJoke: (req, res) => {
+    // READ RANDOM 
+    getRandomJoke: (req,res) => {
         Joke.aggregate([{ $sample: { size: 1 } }])
             .then(randomJoke => res.json(randomJoke[0]))
             .catch(err => res.status(400).json(err));
     },
+    // getRandomJoke: (req, res) => {
+    //     Joke.find(_id)
+    //         .then(allJokes => 
+    //         {
+    //             const randomIndex = Math.floor(Math.random() * allJokes.length)
+    //             const randomJoke = allJokes[randomIndex];
+    //             console.log(randomJoke, randomIndex)
+    //             return res.json(randomJoke)
+    //         })
+    //         .catch(err => res.status(400).json(err))
+    // },
+
+    
     // getRandomJoke: (req, res) => {
     //     Joke.countDocuments().exec((err, count) => {
     //         if (err) {
