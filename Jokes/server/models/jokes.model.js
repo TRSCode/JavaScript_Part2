@@ -5,7 +5,7 @@ const JokeSchema = new mongoose.Schema({
     setup: {
         type: String,
         required: [true, "Setup is required"],
-        minlenght: [2, "Setup must be at least 2 characters long"],
+        minlength: [2, "Setup must be at least 2 characters long"],
         maxlength: [255, "Setup cannot be more than 255 characters long"]
     },
     punchline: {
