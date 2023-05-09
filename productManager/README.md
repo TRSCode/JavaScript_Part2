@@ -8,9 +8,9 @@ Add the ability to create a new product on the main page of the app
 * Ensure the database is updated with the new products in the form of a json object
 
 Part II: 
-*
-*
-*
+* Create a component to list out all products on the main page
+* Create a new view component that will show the details of one product
+* Create a link to the detail page in the list of products
 
 Part III: 
 *
