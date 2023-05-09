@@ -20,7 +20,7 @@ const ProductForm = () => {
     }
 
     return (
-        <form onSubmit={onSubmitHandler}>
+        <form onSubmit={onSubmitHandler} className="container p-3 mb-2 bg-primary text-white col-2">
             <p>
                 <label>Title</label><br/>
                 <input type="text" onChange = {(e)=>setTitle(e.target.value)}/>
@@ -33,7 +33,7 @@ const ProductForm = () => {
                 <label>Description</label><br/>
                 <input type="text" onChange = {(e)=>setDescription(e.target.value)}/>
             </p>
-            <input type="submit"/>
+            <input type="submit" className="btn btn-success mx-3"/>
         </form>
     )
 }
