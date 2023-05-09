@@ -5,7 +5,7 @@ module.exports = {
     createProduct: (req, res) => {
         console.log(req.body)
         Product.create(req.body)
-            .then(newProduct => res.json(newProdcut))
+            .then(newProduct => res.json(newProduct))
             .catch(err => res.status(400).json(err))
     },
 

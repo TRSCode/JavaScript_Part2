@@ -8,8 +8,8 @@ app.use(express.json(), express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-const AllMyUserRoutes = require('./routes/product.route');
-AllMyUserRoutes(app);
+const AllMyProductRoutes = require('./routes/product.route');
+AllMyProductRoutes(app);
 
 
 
