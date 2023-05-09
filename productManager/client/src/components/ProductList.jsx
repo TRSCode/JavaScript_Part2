@@ -18,12 +18,14 @@ const ProductList = (props) => {
 
     return (
         <div className="container">
+            <h3>All Products</h3>
             {
                 product.map((product, index) => {
                 return ( 
                     <div key={index}>
                         <p>Item: {product.title}</p>
-                        <Link to={`/product/${product._id}`}> Veiw '{product.title}' details </Link>
+                        <Link to={`/product/${product._id}`}> Veiw | </Link>
+                        <Link to={'/product/edit/' + product._id}>Edit | </Link>
                         <hr/>
                     </div>
                     

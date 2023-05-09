@@ -13,6 +13,7 @@ Part II:
 * Create a link to the detail page in the list of products
 
 Part III: 
-*
-*
-*
+* Add route to include an autofilled form to edit a given product
+* Add a delete button in the list and detail components (deletes from DB)
+* After deletion redirect to the main view
+* After deletion from main view, update the DOM so that the product is removed
