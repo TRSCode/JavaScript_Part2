@@ -12,7 +12,8 @@ module.exports = {
     // READ ONE PRODUCT
     getOneProduct: (req,res) => {
         console.log(req)
-        Product.findById(req.params.id)
+        // Product.findById(req.params.id) // may need _id:req.params.id with findOne
+        Product.findOne({_id:req.params.id}) 
             .then(oneProduct => res.json(oneProduct))
             .catch(err => res.status(400).res.json(err))
     },
