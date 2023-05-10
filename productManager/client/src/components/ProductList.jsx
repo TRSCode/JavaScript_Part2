@@ -26,18 +26,19 @@ const ProductList = (props) => {
 
     return (
         <div className="container">
-            <h3>All Products</h3>
+            <h3 className="text-center">All Products</h3>
             {
                 product.map((product, index) => {
                 return ( 
-                    <div key={index}>
-                        <p>Item: {product.title}</p>
-                        <Link to={`/product/${product._id}`}> Veiw |</Link>
-                        <Link to={'/product/edit/' + product._id}> Edit</Link>
-                        <button onClick={(e)=>{deleteProduct(product._id)}} className="btn btn-danger ms-2">
-                            Delete
-                        </button>
-                        <hr/>
+                    <div key={index} className='d-inline-flex mx-5'>
+                        <div> 
+                            <p>Item: {product.title}</p>
+                            <Link to={`/product/${product._id}`}> Veiw |</Link>
+                            <Link to={'/product/edit/' + product._id}> Edit</Link>
+                            <button onClick={(e)=>{deleteProduct(product._id)}} className="btn btn-danger ms-2">
+                                Delete
+                            </button>
+                        </div>
                     </div>
                     
                 )})

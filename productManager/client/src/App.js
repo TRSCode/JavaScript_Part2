@@ -10,7 +10,7 @@ function App() {
       {/* <ProductForm/> */}
       <BrowserRouter>
         <Routes>
-          <Route element={<Main/>} path="/home"/>
+          <Route element={<Main/>} path="/home" default/>
           <Route element={<Detail/>} path="/product/:id"/>
           <Route element={<Update/>} path="/product/edit/:id"/>
         </Routes>

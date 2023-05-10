@@ -32,7 +32,7 @@ const Update = (props) => {
     }
     return (
         <div>
-            <form onSubmit={updateProduct} className="container">
+            <form onSubmit={updateProduct} className="container col-5 mt-3">
             <h3>Update a Product</h3>
                 <p>
                     <label>Title</label><br/>

@@ -25,16 +25,16 @@ const ProductForm = (props) => {
         <form onSubmit={onSubmitHandler} className="container p-3 mb-2 bg-primary text-white col-2">
             <h3>Add a Product</h3>
             <p>
-                <label>Title</label><br/>
-                <input type="text" onChange = {(e)=>setTitle(e.target.value)}/>
+                <label className="form-label">Title</label><br/>
+                <input type="text" className="form-control" onChange = {(e)=>setTitle(e.target.value)}/>
             </p>
             <p>
-                <label>Price</label><br/>
-                <input type="text" onChange = {(e)=>setPrice(e.target.value)}/>
+                <label className="form-label">Price</label><br/>
+                <input type="text" className="form-control" onChange = {(e)=>setPrice(e.target.value)}/>
             </p>
             <p>
-                <label>Description</label><br/>
-                <input type="text" onChange = {(e)=>setDescription(e.target.value)}/>
+                <label className="form-label">Description</label><br/>
+                <input type="text" className="form-control" onChange = {(e)=>setDescription(e.target.value)}/>
             </p>
             <input type="submit" className="btn btn-success mx-3"/>
         </form>
