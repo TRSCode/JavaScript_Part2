@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 const Update = (props) => {
     const { id } = useParams();
     const [title, setTitle] = useState();
@@ -52,6 +52,7 @@ const Update = (props) => {
                         name="description" value={description} 
                         onChange={(e) => { setDescription(e.target.value)}} />
                 </p>
+                <Link to={'/home'}> Home </Link>
                 <input type="submit" className="btn btn-primary mx-3"/>
             </form>
         </div>
