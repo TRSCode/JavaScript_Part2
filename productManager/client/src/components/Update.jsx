@@ -32,28 +32,31 @@ const Update = (props) => {
     }
     return (
         <div>
-            <form onSubmit={updateProduct} className="container col-5 mt-3">
-            <h3>Update a Product</h3>
+            <form onSubmit={updateProduct} className="container p-2 bg-primary text-white col-3">
+                <h3 className="text-center">Update a Product</h3>
+                <hr/>
                 <p>
-                    <label>Title</label><br/>
-                    <input type="text" 
+                    <label className="form-label">Title</label><br/>
+                    <input type="text" className="form-control"
                         name="title" value={title} 
                         onChange={(e) => { setTitle(e.target.value)}} />
                 </p>
                 <p>
-                    <label>Price</label><br/>
-                    <input type="text" 
+                    <label className="form-label">Price</label><br/>
+                    <input type="text" className="form-control"
                         name="price" value={price} 
                         onChange={(e) => { setPrice(e.target.value)}} />
                 </p>
                 <p>
-                    <label>Description</label><br/>
-                    <input type="text" 
+                    <label className="form-label">Description</label><br/>
+                    <input type="text" className="form-control"
                         name="description" value={description} 
                         onChange={(e) => { setDescription(e.target.value)}} />
                 </p>
-                <Link to={'/home'}> Home </Link>
-                <input type="submit" className="btn btn-primary mx-3"/>
+                <div className="d-flex justify-content-center">
+                    <Link to={'/home'} className="text-light"> Home </Link>
+                    <input type="submit" className="btn btn-success mx-3"/>
+                </div>
             </form>
         </div>
     )

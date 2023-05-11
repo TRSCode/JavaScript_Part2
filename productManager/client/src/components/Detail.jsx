@@ -26,15 +26,18 @@ const Detail = (props) => {
     }
 
     return (
-        <div className="container col-5 mt-3">
+        <div className="container p-2 bg-primary text-white col-3">
             <h3>{product.title}</h3>
-            <p>Price: {product.price}</p>
-            <p>Description: {product.description}</p>
-            <Link to={'/home'}> Home |</Link>
-            <Link to={'/product/edit/' + product._id}> Edit</Link>
-            <button onClick={deleteProduct} className="btn btn-danger ms-2">
-                Delete
-            </button>
+            <hr/>
+            <p><span className="text-black">Price: </span>{product.price}</p>
+            <p><span className="text-black">Description: </span>{product.description}</p>
+            <div className="d-flex justify-content-center">
+                <Link to={'/home'} className="text-light"> Home |</Link>
+                <Link to={'/product/edit/' + product._id} className="text-light"> Edit</Link>
+                <button onClick={deleteProduct} className="btn btn-danger ms-2">
+                    Delete
+                </button>
+            </div>
         </div>
     );
 }
