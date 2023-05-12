@@ -31,8 +31,9 @@ const ProductForm = (props) => {
     return (
         <form onSubmit={onSubmitHandler} className="container p-3 mb-2 bg-primary text-white col-2">
             <h3>Add a Product</h3>
+
             {errors.title ? 
-            <p className="">{errors.title.message}</p>:""}
+            <p className="bg-danger text-warning">{errors.title.message}</p>:""}
             
             
             <p>
