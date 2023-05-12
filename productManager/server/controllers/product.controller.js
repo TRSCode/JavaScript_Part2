@@ -20,7 +20,7 @@ module.exports = {
 
     // READ ALL PRODUCTS
     getAllProducts: (req,res) => {
-        Product.find()
+        Product.find().sort({title:1}) //sort added see docs
             .then(allProducts => res.json(allProducts))
             .catch(err => res.status(400).json(err))
     },

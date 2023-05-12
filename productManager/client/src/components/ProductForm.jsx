@@ -5,6 +5,7 @@ const ProductForm = (props) => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
+    const [errors,setErrors] = useState({});
     
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -21,12 +22,19 @@ const ProductForm = (props) => {
                 setPrice("");
                 setDescription("");
             })
-        .catch(err =>console.log(err))
+        .catch(err =>{
+            console.log(err);
+            setErrors(err.response.data.errors)
+        })
     }
 
     return (
         <form onSubmit={onSubmitHandler} className="container p-3 mb-2 bg-primary text-white col-2">
             <h3>Add a Product</h3>
+            {errors.title ? 
+            <p className="">{errors.title.message}</p>:""}
+            
+            
             <p>
                 <label className="form-label">Title</label><br/>
                 <input type="text" className="form-control" value={title} onChange = {(e)=>setTitle(e.target.value)}/>
